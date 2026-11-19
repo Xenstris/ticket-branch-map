@@ -1,0 +1,80 @@
+{
+  "port": 4455,
+  "gitlab": {
+    "hostname": "gitlab.com",
+    "groupId": 7347776,
+    "concurrency": 20,
+    "maxAgeSeconds": 120,
+    "changeCheckSeconds": 15,
+    "environments": [
+      "stg",
+      "preprod",
+      "uat"
+    ],
+    "releaseTrain": {
+      "project": "epc-network/core-infrastructure/release-sync-train",
+      "file": "release-train.json",
+      "ref": "develop"
+    },
+    "products": [
+      {
+        "name": "cryden",
+        "label": "Cryden",
+        "repos": [
+          "epc-network/cryden/cryden-api",
+          "epc-network/cryden/cryden-portal"
+        ]
+      },
+      {
+        "name": "traffico",
+        "label": "Traffico",
+        "repos": [
+          "epc-network/traffico/traffico-api",
+          "epc-network/traffico/traffico-manager",
+          "epc-network/traffico/traffico-portal",
+          "epc-network/traffico/traffico-worker"
+        ]
+      },
+      {
+        "name": "heiser",
+        "label": "Heiser",
+        "repos": [
+          "epc-network/heiser/workers/walter-jr-backend",
+          "epc-network/heiser/workers/heiser-next",
+          "epc-network/heiser/workers/heiser-ex"
+        ]
+      }
+    ],
+    "libraries": {
+      "epc-network/core-backend/common/cryden-common": "cryden",
+      "epc-network/core-backend/common/traffico": "traffico"
+    },
+    "qa": {
+      "project": "epc-network/qa/internal-qa-automation",
+      "localPath": "/Users/maciejwitkowski/Repos/internal-qa-automation",
+      "candidateBranch": "^(rc-next|release-candidate/.+)$",
+      "ignoreLocalBranches": "^(backup/|mr-\\d+)"
+    }
+  },
+  "notion": {
+    "maxAgeMinutes": 15,
+    "model": "haiku",
+    "mcpUrl": "https://mcp.notion.com/mcp",
+    "viewUrl": "view://41410752-27c0-8138-9624-000c96d367d5",
+    "tasksDataSource": "collection://4754f666-9424-4e46-a108-3eb9a3ceab0d",
+    "releaseVersionsDataSource": "collection://28b10752-27c0-8097-9ec5-000bdf21ce8f",
+    "releaseVersionsTaskRelation": "🚀 Internal Apps Tasks",
+    "doneStatuses": [
+      "Released to Prod",
+      "Archived"
+    ],
+    "projects": {
+      "2fe1075227c080108d1fe08bbaa76da7": "cryden",
+      "a1727bed3b034955b4e738df90a32daa": "traffico",
+      "1336c71be17e4a48b7fafff23a964f33": "heiser"
+    }
+  },
+  "tickets": {
+    "aliases": {}
+  }
+}

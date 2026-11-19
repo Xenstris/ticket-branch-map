@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mapa ticketów</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <h1>Mapa ticketów</h1>
+      </div>
+      <nav class="tabs" id="tabs" aria-label="Widok"></nav>
+      <div class="topbar-right">
+        <div class="freshness" id="freshness" aria-live="polite"></div>
+        <button class="btn" id="refresh" type="button" title="Odczytaj GitLaba od nowa">Odśwież</button>
+        <button class="btn" id="refresh-notion" type="button" title="Pobierz tickety z Notion i odczytaj GitLaba od nowa">Odśwież z Notion</button>
+        <button class="btn icon-btn" id="theme" type="button" title="Jasny / ciemny motyw" aria-label="Przełącz motyw"></button>
+      </div>
+    </header>
+    <div class="notice-stack" id="notices"></div>
+    <main class="layout">
+      <aside class="sidebar" id="sidebar" aria-label="Tickety"></aside>
+      <section class="detail" id="detail"></section>
+    </main>
+    <div class="popover-layer" id="popover-layer"></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "ticket-branch-map",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local web tool: my Notion tickets and how their branches relate across GitLab repositories",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test \"test/*.test.mjs\""
+  }
+}
